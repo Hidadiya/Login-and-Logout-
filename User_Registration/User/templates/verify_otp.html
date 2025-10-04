@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% block title %}OTP Verification{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2>Verify OTP</h2>
+    <p>We've sent a code to your email.</p>
+
+    {% for message in messages %}
+    <div class="alert {{ message.tags }}">{{ message }}</div>
+    {% endfor %}
+
+    <form method="post">
+        {% csrf_token %}
+        {% for field in form %}
+            <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+            {{ field }}
+            {% for error in field.errors %}
+                <div class="alert error">{{ error }}</div>
+            {% endfor %}
+        {% endfor %}
+        <button type="submit">Verify</button>
+    </form>
+
+    {% if resend_count < 3 %}
+    <div id="resend-section">
+        <p id="countdown-text"></p>
+        <form method="post" id="resend-form" style="display: none;">
+            {% csrf_token %}
+            <button type="submit" name="resend">Resend OTP</button>
+        </form>
+    </div>
+    {% else %}
+    <p style="color:red;">You have exceeded the resend limit. Please try again after 2 hours.</p>
+    {% endif %}
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    const resendAvailableAt = {{ resend_available_at_ts|safe }};
+    const countdownText = document.getElementById('countdown-text');
+    const resendForm = document.getElementById('resend-form');
+
+    function updateCountdown() {
+        const now = new Date().getTime();
+        const distance = resendAvailableAt - now;
+
+        if (distance <= 0) {
+            countdownText.style.display = 'none';
+            resendForm.style.display = 'block';
+            clearInterval(interval);
+        } else {
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            countdownText.innerText = `You can resend OTP in ${seconds} seconds`;
+        }
+    }
+
+    if (resendForm) {
+        const interval = setInterval(updateCountdown, 1000);
+        updateCountdown();
+    }
+</script>
+{% endblock %}
