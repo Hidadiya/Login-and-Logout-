@@ -57,26 +57,26 @@ The project also includes **login, logout, reCAPTCHA protection, OTP resend with
 
 ## ⚙️ Installation & Setup  
 
-### 1. Clone the Repository  
+    ### 1. Clone the Repository  
 
-```bash
-git clone https://github.com/your-username/django-otp-auth.git
-cd django-otp-auth
-
-
-### 2. Create Virtual Environment
-
-    python -m venv venv
-    source venv/bin/activate  # On Linux/Mac
-    venv\Scripts\activate     # On Windows
+        ```bash
+        git clone https://github.com/your-username/django-otp-auth.git
+        cd django-otp-auth
 
 
-### 3. Install Dependencies
+    ### 2. Create Virtual Environment
 
-    pip install -r requirements.txt
+        python -m venv venv
+        source venv/bin/activate  # On Linux/Mac
+        venv\Scripts\activate     # On Windows
 
-### 4. Configure Settings
-    Open settings.py and configure your email backend for OTP sending:
+
+    ### 3. Install Dependencies
+
+        pip install -r requirements.txt
+
+    ### 4. Configure Settings
+        Open settings.py and configure your email backend for OTP sending:
 
         EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
         EMAIL_HOST = 'smtp.gmail.com'
@@ -86,53 +86,53 @@ cd django-otp-auth
         EMAIL_HOST_PASSWORD = 'your_email_password_or_app_password'
 
 
-    Add your Google reCAPTCHA keys in settings.py:
+        Add your Google reCAPTCHA keys in settings.py:
 
         RECAPTCHA_PUBLIC_KEY = 'your-site-key'
         RECAPTCHA_PRIVATE_KEY = 'your-secret-key'
 
 
-### 5. Apply Migrations
+    ### 5. Apply Migrations
 
-    python manage.py migrate
+        python manage.py migrate
 
 
-### 6. Run Server
+    ### 6. Run Server
 
-    python manage.py runserver
+        python manage.py runserver
 
 
 ## 📸 Screenshots  
 
-### 🔹 Signup Page  
-![Signup](static/images/signuppage.png)  
+    ### 🔹 Signup Page  
+        ![Signup](static/images/signuppage.png)  
 
-### 🔹 OTP Verification  
-![OTP](static/images/otppage.png)  
+    ### 🔹 OTP Verification  
+        ![OTP](static/images/otppage.png)  
 
-### 🔹 Login Page with reCAPTCHA  
-![Login](static/images/loginpage.png)  
+    ### 🔹 Login Page with reCAPTCHA  
+        ![Login](static/images/loginpage.png)  
 
-### 🔹 Home Page  
-![Home](static/images/homepage.png)  
+    ### 🔹 Home Page  
+        ![Home](static/images/homepage.png)  
 
 
 ## License
 
-This project is intended for educational purposes only.
+    This project is intended for educational purposes only.
 
-Usage Terms
+##Usage Terms
 
-You may use, modify, and share this code for learning, teaching, or academic projects.
-Commercial use, redistribution, or deployment in production environments is not permitted without explicit permission.
-This project is provided "as is" with no warranties or guarantees.
-If you wish to use this project beyond an educational scope, please contact the author for permission.
+    You may use, modify, and share this code for learning, teaching, or academic projects.
+    Commercial use, redistribution, or deployment in production environments is not permitted without explicit permission.
+    This project is provided "as is" with no warranties or guarantees.
+    If you wish to use this project beyond an educational scope, please contact the author for permission.
 
 
-👨‍💻 Author
+##👨‍💻 Author
 
-Developed by Hidayathulla 🚀
-Feel free to fork, contribute, and star ⭐ this repo if you find it useful.
+    Developed by Hidayathulla 🚀
+    Feel free to fork, contribute, and star ⭐ this repo if you find it useful.
 
 
 
