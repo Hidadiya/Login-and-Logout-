@@ -30,26 +30,26 @@ The project also includes **login, logout, reCAPTCHA protection, OTP resend with
 
 ## 📂 Project Structure  
 
-User_Registration/
-│── User/
-│   ├── migrations/
-│   ├── templates/
-│   │   ├── base.html
-│   │   ├── login.html
-│   │   ├── signup.html
-│   │   ├── verify_otp.html
-│   │   └── home.html
-|   |── static/css
-|   |   ├── simple.css
-│   ├── forms.py
-│   ├── models.py
-│   ├── views.py
-│   ├── urls.py
-│── auth_system/   # Django project settings
-│ 
-│── manage.py
-│── README.md
-│── requirements.txt
+    User_Registration/
+    │── User/
+    │   ├── migrations/
+    │   ├── templates/
+    │   │   ├── base.html
+    │   │   ├── login.html
+    │   │   ├── signup.html
+    │   │   ├── verify_otp.html
+    │   │   └── home.html
+    |   |── static/css
+    |   |   ├── simple.css
+    │   ├── forms.py
+    │   ├── models.py
+    │   ├── views.py
+    │   ├── urls.py
+    │── auth_system/   # Django project settings
+    │ 
+    │── manage.py
+    │── README.md
+    │── requirements.txt
 
 
 
